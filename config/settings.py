@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-*#q7ka9u8txghforlz1d6epkd!i8smm38@5jz0z&8#l$e$#fq(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS = ['https://*.amvera.io', 'https://*.amvera.ru']
 
 
 # Application definition
@@ -45,6 +46,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -144,6 +146,8 @@ EMAIL_HOST_PASSWORD = 'gw2MbovnshMx4aaJfBun' # Вставьте скопиров
 # Адреса
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 MANAGER_EMAIL = 'Barskaya_alena@inbox.ru' # Заявки будут приходить сюда же
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 
