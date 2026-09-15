@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Услуги дезинсекции{% endblock %}
+
+{% block content %}
+<section>
+    <h1>Наши услуги</h1>
+    <div class="services-grid">
+        {% for service in services %}
+        <div class="service-card">
+            <a href="{{ service.get_absolute_url }}" class="service-link">
+                {% if service.icon %}
+                    <img src="{{ service.icon.url }}" alt="{{ service.name }}" class="service-icon">
+                {% else %}
+                    <div class="service-icon-placeholder">🐜</div>
+                {% endif %}
+                <span class="service-name">{{ service.name }}</span>
+            </a>
+        </div>
+        {% empty %}
+        <p>Услуги пока не добавлены.</p>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

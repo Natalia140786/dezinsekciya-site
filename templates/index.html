@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}Дезинсекция — уничтожение насекомых{% endblock %}
+
+{% block content %}
+    <!-- КАРУСЕЛЬ -->
+    {% if sliders %}
+    <section class="swiper-container" style="margin-bottom: 40px; border-radius: 12px; overflow: hidden;">
+        <div class="swiper-wrapper">
+            {% for slide in sliders %}
+            <div class="swiper-slide" style="position: relative; text-align: center; color: white;">
+                <img src="{{ slide.image.url }}" alt="{{ slide.title }}" style="width: 100%; height: 400px; object-fit: cover; display: block;">
+                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0,0,0,0.5); padding: 30px; border-radius: 12px; width: 80%; max-width: 700px;">
+                    {% if slide.title %}
+                        <h2 style="font-family: 'Montserrat', sans-serif; font-size: 36px; margin: 0 0 10px;">{{ slide.title }}</h2>
+                    {% endif %}
+                    {% if slide.subtitle %}
+                        <p style="font-size: 18px; margin: 0 0 20px;">{{ slide.subtitle }}</p>
+                    {% endif %}
+                    {% if slide.link and slide.link_text %}
+                        <a href="{{ slide.link }}" class="btn" style="background-color: #F5B041; color: #1E4A2B; padding: 12px 30px; border-radius: 8px; text-decoration: none; font-weight: bold;">{{ slide.link_text }}</a>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <!-- Пагинация -->
+        <div class="swiper-pagination"></div>
+        <!-- Кнопки навигации -->
+        <div class="swiper-button-next" style="color: white;"></div>
+        <div class="swiper-button-prev" style="color: white;"></div>
+    </section>
+    {% endif %}
+
+    <!-- Блок с заголовком -->
+    <section style="margin: 40px 0;">
+        <h1 style="font-family: 'Montserrat', sans-serif; color: #1E4A2B;">Уничтожение насекомых с гарантией</h1>
+        <p style="font-size: 18px;">Профессиональная дезинсекция квартир, домов и коммерческих объектов.</p>
+    </section>
+
+    <!-- Список услуг -->
+    <section>
+        <h2>Наши услуги</h2>
+        <div class="services-grid">
+            {% for service in all_services %}
+            <div class="service-card">
+                <a href="{{ service.get_absolute_url }}" class="service-link">
+                    {% if service.icon %}
+                        <img src="{{ service.icon.url }}" alt="{{ service.name }}" class="service-icon">
+                    {% else %}
+                        <div class="service-icon-placeholder">🐜</div>
+                    {% endif %}
+                    <span class="service-name">{{ service.name }}</span>
+                </a>
+            </div>
+            {% empty %}
+            <p>Услуги пока не добавлены. Зайдите в <a href="/admin">админку</a> и добавьте хотя бы одну.</p>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

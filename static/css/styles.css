@@ -1,0 +1,206 @@
+/* Подключаем шрифты Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&display=swap');
+
+/* Общие настройки */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #333333;
+    background-color: #ffffff;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    color: #1E4A2B;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* КНОПКА ЖЁЛТАЯ */
+.btn-yellow {
+    display: inline-block;
+    background-color: #F5B041;
+    color: #1E4A2B;
+    font-weight: 600;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-yellow:hover {
+    background-color: #e09e2f;
+    transform: scale(1.03);
+}
+
+/* СЕКЦИИ */
+section {
+    padding: 60px 0;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+}
+
+/* БЛОК ПРЕИМУЩЕСТВ */
+.advantages {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.advantage-item {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 12px;
+    flex: 1 1 250px;
+    text-align: center;
+    border-left: 5px solid #F5B041;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.advantage-item h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+/* ПОДВАЛ */
+footer {
+    background-color: #1E4A2B;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* ============================================ */
+/* ===== СЕТКА УСЛУГ (ГЛАВНАЯ СТРАНИЦА) ===== */
+/* ============================================ */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+}
+
+/* КАРТОЧКА УСЛУГИ */
+.service-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border: 1px solid #f0f0f0;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* ССЫЛКА В КАРТОЧКЕ */
+.service-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ============================================ */
+/* ===== ИКОНКА В КАРТОЧКЕ ===== */
+/* ============================================ */
+
+.service-icon {
+    max-width: 80px;          /* ← УМЕНЬШИЛИ РАЗМЕР */
+    max-height: 80px;
+    width: auto;
+    height: auto;
+    border-radius: 50%;
+    background: #f0f7f0;
+    padding: 10px;
+    margin: 0 auto 12px;
+    display: block;
+    object-fit: contain;      /* чтобы иконка не обрезалась */
+}
+
+/* Заглушка, если иконки нет */
+.service-icon-placeholder {
+    font-size: 48px;
+    margin-bottom: 12px;
+}
+
+/* НАЗВАНИЕ УСЛУГИ */
+.service-name {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1E4A2B;
+    line-height: 1.3;
+}
+
+/* ============================================ */
+/* ===== АДАПТИВ ДЛЯ МОБИЛЬНЫХ ===== */
+/* ============================================ */
+
+@media (max-width: 600px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .service-card {
+        padding: 15px 10px;
+    }
+
+    .service-icon {
+        max-width: 120px;
+        max-height: 120px;
+        padding: 8px;
+    }
+
+    .service-name {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 400px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Иконка на странице услуги */
+.service-icon-detail {
+    max-width: 120px;
+    max-height: 120px;
+    width: auto;
+    height: auto;
+    border-radius: 50%;
+    background: #f0f7f0;
+    padding: 15px;
+    display: inline-block;
+    object-fit: contain;
+}

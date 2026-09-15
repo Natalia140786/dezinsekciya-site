@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Контакты — Дезинсекция{% endblock %}
+
+{% block content %}
+<section>
+    <h1>Контакты</h1>
+    <p>Мы всегда на связи! Вы можете связаться с нами любым удобным способом.</p>
+    
+    <div style="display: flex; flex-wrap: wrap; gap: 40px; margin-top: 30px;">
+        <div style="flex: 1; min-width: 250px;">
+            <h3>Телефоны</h3>
+            <p>+7 (351) 200-26-83 — дежурный диспетчер</p>
+            <p>+7 (999) 123-45-67 — мобильный</p>
+            
+            <h3>Email</h3>
+            <p>info@dezinsekciya.ru</p>
+            
+            <h3>Адрес</h3>
+            <p>г. Челябинск, ул. Ленина, д. 1</p>
+            
+            <h3>График работы</h3>
+            <p>Ежедневно с 8:00 до 22:00</p>
+        </div>
+        
+        <div style="flex: 2; min-width: 300px;">
+            <h3>Карта проезда</h3>
+            <!-- Здесь будет карта -->
+            <div style="background: #f0f0f0; height: 300px; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                <p style="color: #999;">Карта загружается...</p>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top: 40px;">
+        <h3>Свяжитесь с нами</h3>
+        <p>Или оставьте заявку через <a href="{% url 'order_form' %}">форму обратной связи</a>.</p>
+    </div>
+</section>
+{% endblock %}

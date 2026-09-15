@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Вопросы и ответы{% endblock %}
+
+{% block content %}
+<section style="max-width: 800px; margin: 0 auto; padding: 20px;">
+    <h1 style="font-family: 'Montserrat', sans-serif; color: #1E4A2B;">Часто задаваемые вопросы</h1>
+    
+    {% if faqs %}
+        {% for faq in faqs %}
+        <div style="border-bottom: 1px solid #ddd; padding: 15px 0;">
+            <h3 style="color: #1E4A2B; margin: 0 0 8px 0;">{{ faq.question }}</h3>
+            <p style="margin: 0; line-height: 1.6;">{{ faq.answer|linebreaks }}</p>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>Вопросов пока нет. Зайдите в админку и добавьте несколько.</p>
+    {% endif %}
+</section>
+
+<!-- Микроразметка FAQPage -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {% for faq in faqs %}
+        {
+            "@type": "Question",
+            "name": "{{ faq.question|escapejs }}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{{ faq.answer|escapejs }}"
+            }
+        }{% if not forloop.last %},{% endif %}
+        {% endfor %}
+    ]
+}
+</script>
+{% endblock %}

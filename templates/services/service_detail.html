@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}{{ seo_title }}{% endblock %}
+
+{% block content %}
+<article>
+    <h1>{{ service.name }}</h1>
+
+    <!-- ИКОНКА УСЛУГИ -->
+    {% if service.icon %}
+        <div style="text-align: center; margin: 20px 0;">
+            <img src="{{ service.icon.url }}" alt="{{ service.name }}" class="service-icon-detail">
+        </div>
+    {% endif %}
+
+    <p><strong>Цена от {{ service.price_from }} руб.</strong></p>
+    <p>{{ service.full_description|linebreaks }}</p>
+
+    {% if service.methods %}
+        <h3>Методы обработки</h3>
+        <p>{{ service.methods|linebreaks }}</p>
+    {% endif %}
+
+    <p><strong>Гарантия:</strong> {{ service.guarantee }}</p>
+
+    <!-- Блок фото (если есть) -->
+    {% if service.photo_before and service.photo_after %}
+        <div class="before-after" style="display: flex; gap: 20px; margin: 20px 0;">
+            <div>
+                <p><strong>До обработки</strong></p>
+                <img src="{{ service.photo_before.url }}" alt="До обработки" style="max-width: 300px; border-radius: 8px;">
+            </div>
+            <div>
+                <p><strong>После обработки</strong></p>
+                <img src="{{ service.photo_after.url }}" alt="После обработки" style="max-width: 300px; border-radius: 8px;">
+            </div>
+        </div>
+    {% endif %}
+
+    <a href="{% url 'services:service_list' %}">← Назад к услугам</a>
+</article>
+
+<!-- Микроразметка Service -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "{{ service.name }}",
+    "description": "{{ service.short_description }}",
+    "provider": {
+        "@type": "LocalBusiness",
+        "name": "Дезинсекция"
+    },
+    "offers": {
+        "@type": "Offer",
+        "price": "{{ service.price_from }}",
+        "priceCurrency": "RUB"
+    }
+}
+</script>
+{% endblock %}
