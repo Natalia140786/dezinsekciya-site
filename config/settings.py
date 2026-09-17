@@ -82,7 +82,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'dezinsect',
-        'USER': 'djangouser',
+        'USER': 'postgres',
         'PASSWORD': 'SuperDezinsect2026',
         'HOST': 'amvera-tekhinanaty-1407-cnpg-dezinsect-d-rw',
         'PORT': '5432',
