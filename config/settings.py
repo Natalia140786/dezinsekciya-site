@@ -80,8 +80,12 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dezinsect',
+        'USER': 'djangouser',
+        'PASSWORD': 'SuperDezinsect2026',
+        'HOST': 'amvera-tekhinanaty-1407-cnpg-dezinsect-d-rw',
+        'PORT': '5432',
     }
 }
 
