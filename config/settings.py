@@ -146,7 +146,9 @@ EMAIL_HOST_PASSWORD = 'gw2MbovnshMx4aaJfBun' # Вставьте скопиров
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 MANAGER_EMAIL = 'Barskaya_alena@inbox.ru' # Заявки будут приходить сюда же
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+
+
+WHITENOISE_USE_FINDERS = True
 
 
 
