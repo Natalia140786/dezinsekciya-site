@@ -9,7 +9,8 @@ build:
   useCache: true
 run:
   persistenceMount: /data
-  command: gunicorn config.wsgi:application --bind 0.0.0.0:80
+  command: sh -c "python manage.py collectstatic --noinput && python manage.py migrate
+    && gunicorn config.wsgi:application --bind 0.0.0.0:80"
   containerPort: 80
   russianTrustedCa: false
   singleton: true
