@@ -35,11 +35,11 @@
     <!-- Блок с заголовком -->
     <section style="margin: 40px 0;">
         <h1 style="font-family: 'Montserrat', sans-serif; color: #1E4A2B;">Уничтожение насекомых с гарантией</h1>
-        <p style="font-size: 18px;">Профессиональная дезинсекция квартир, домов и коммерческих объектов.</p>
+        <p style="font-size: 18px;">Профессиональная дезинсекция квартир, домов и коммерческих объектов. Официальный договор, препараты без запаха, мастер на месте в течение часа. Работаем круглосуточно.</p>
     </section>
 
     <!-- Список услуг -->
-    <section>
+    <section style="margin-bottom: 60px;">
         <h2>Наши услуги</h2>
         <div class="services-grid">
             {% for service in all_services %}
@@ -58,4 +58,71 @@
             {% endfor %}
         </div>
     </section>
+
+    <!-- НОВЫЙ БЛОК: ПОЧЕМУ ВЫБИРАЮТ НАС -->
+    <section class="why-us-section">
+        <h2>Почему выбирают нас</h2>
+        <div class="advantages-grid">
+            
+            <div class="advantage-card">
+                <div class="advantage-icon">🛡️</div>
+                <h3>Гарантия до 1 года</h3>
+                <p>Если насекомые вернутся — проведем повторную обработку бесплатно по договору.</p>
+            </div>
+
+            <div class="advantage-card">
+                <div class="advantage-icon">🌿</div>
+                <h3>Безопасные средства</h3>
+                <p>Используем сертифицированные препараты IV класса безопасности для людей и животных.</p>
+            </div>
+
+            <div class="advantage-card">
+                <div class="advantage-icon">⚡</div>
+                <h3>Срочный выезд</h3>
+                <p>Приедем в течение 2 часов после вашей заявки. Работаем без выходных.</p>
+            </div>
+
+            <div class="advantage-card">
+                <div class="advantage-icon">👨‍🔬</div>
+                <h3>Опытные мастера</h3>
+                <p>Наши специалисты имеют профильное образование и опыт работы от 5 лет.</p>
+            </div>
+
+        </div>
+    </section>
+
+        <!-- НОВЫЙ БЛОК: КАК МЫ РАБОТАЕМ -->
+    <section class="how-we-work-section">
+        <div class="container">
+            <h2>Как мы работаем</h2>
+            <div class="steps-grid">
+                
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Оставляете заявку</h3>
+                    <p>Звоните нам или оставляете заявку на сайте. Мы связываемся с вами в течение 5 минут.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Консультация</h3>
+                    <p>Уточняем детали, тип насекомых и площадь. Называем точную стоимость и время выезда.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Выезд и обработка</h3>
+                    <p>Мастер приезжает в назначенное время, проводит безопасную обработку и дает рекомендации.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3>Гарантия</h3>
+                    <p>Вы получаете договор и гарантию. Если насекомые вернутся — приедем снова бесплатно.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
 {% endblock %}

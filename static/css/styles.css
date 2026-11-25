@@ -133,8 +133,8 @@ footer p {
 /* ============================================ */
 
 .service-icon {
-    max-width: 80px;          /* ← УМЕНЬШИЛИ РАЗМЕР */
-    max-height: 80px;
+    max-width: 120px;          /* ← УМЕНЬШИЛИ РАЗМЕР */
+    max-height: 120px;
     width: auto;
     height: auto;
     border-radius: 50%;
@@ -176,8 +176,8 @@ footer p {
     }
 
     .service-icon {
-        max-width: 120px;
-        max-height: 120px;
+        max-width: 160px;
+        max-height: 160px;
         padding: 8px;
     }
 
@@ -194,8 +194,8 @@ footer p {
 
 /* Иконка на странице услуги */
 .service-icon-detail {
-    max-width: 120px;
-    max-height: 120px;
+    max-width: 160px;
+    max-height: 160px;
     width: auto;
     height: auto;
     border-radius: 50%;
@@ -203,4 +203,117 @@ footer p {
     padding: 15px;
     display: inline-block;
     object-fit: contain;
+}
+
+/* --- Блок "Почему выбирают нас" --- */
+.why-us-section {
+    padding: 60px 0;
+    background-color: #f8f9fa; /* Светло-серый фон */
+    border-radius: 12px; /* Скругление, если блок будет на всю ширину */
+    margin-bottom: 40px;
+}
+
+.why-us-section h2 {
+    text-align: center;
+    color: #1E4A2B;
+    font-size: 36px;
+    margin-bottom: 40px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    padding: 0 20px; /* Отступы по бокам для мобильных */
+}
+
+.advantage-card {
+    background: #ffffff;
+    padding: 30px 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-top: 4px solid #F5B041;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.advantage-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.advantage-icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.advantage-card h3 {
+    font-size: 20px;
+    color: #1E4A2B;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.advantage-card p {
+    font-size: 15px;
+    color: #555555;
+    line-height: 1.5;
+}
+
+/* --- Блок "Как мы работаем" --- */
+.how-we-work-section {
+    padding: 60px 0;
+    background-color: #ffffff; /* Белый фон, чтобы чередовался с серым блоком выше */
+}
+
+.how-we-work-section h2 {
+    text-align: center;
+    color: #1E4A2B;
+    font-size: 36px;
+    margin-bottom: 50px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.step-card {
+    position: relative;
+    padding: 20px;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background-color: #F5B041; /* Желтый акцент */
+    color: #1E4A2B;
+    font-size: 28px;
+    font-weight: 800;
+    border-radius: 50%; /* Делает круг */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 4px 10px rgba(245, 176, 65, 0.3); /* Легкая тень для объема */
+}
+
+.step-card h3 {
+    font-size: 20px;
+    color: #1E4A2B;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.step-card p {
+    font-size: 15px;
+    color: #555555;
+    line-height: 1.5;
 }
