@@ -5,7 +5,8 @@
 {% block content %}
     <!-- КАРУСЕЛЬ -->
     {% if sliders %}
-    <section class="swiper-container" style="margin-bottom: 40px; border-radius: 12px; overflow: hidden;">
+    <!-- Уменьшили отступ снизу с 40px до 20px -->
+    <section class="swiper-container" style="margin-bottom: 20px; border-radius: 12px; overflow: hidden;">
         <div class="swiper-wrapper">
             {% for slide in sliders %}
             <div class="swiper-slide" style="position: relative; text-align: center; color: white;">
@@ -33,13 +34,15 @@
     {% endif %}
 
     <!-- Блок с заголовком -->
-    <section style="margin: 40px 0;">
+    <!-- Уменьшили отступы: 10px сверху, 30px снизу -->
+    <section style="margin: 10px 0 30px 0;">
         <h1 style="font-family: 'Montserrat', sans-serif; color: #1E4A2B;">Уничтожение насекомых с гарантией</h1>
         <p style="font-size: 18px;">Профессиональная дезинсекция квартир, домов и коммерческих объектов. Официальный договор, препараты без запаха, мастер на месте в течение часа. Работаем круглосуточно.</p>
     </section>
 
     <!-- Список услуг -->
-    <section style="margin-bottom: 60px;">
+    <!-- Уменьшили отступ снизу с 60px до 20px -->
+    <section style="margin-bottom: 20px;">
         <h2>Наши услуги</h2>
         <div class="services-grid">
             {% for service in all_services %}
@@ -61,37 +64,40 @@
 
     <!-- НОВЫЙ БЛОК: ПОЧЕМУ ВЫБИРАЮТ НАС -->
     <section class="why-us-section">
-        <h2>Почему выбирают нас</h2>
-        <div class="advantages-grid">
-            
-            <div class="advantage-card">
-                <div class="advantage-icon">🛡️</div>
-                <h3>Гарантия до 1 года</h3>
-                <p>Если насекомые вернутся — проведем повторную обработку бесплатно по договору.</p>
-            </div>
+        <!-- Добавил обертку container, чтобы текст не прилипал к краям экрана -->
+        <div class="container">
+            <h2>Почему выбирают нас</h2>
+            <div class="advantages-grid">
+                
+                <div class="advantage-card">
+                    <div class="advantage-icon">🛡️</div>
+                    <h3>Гарантия до 1 года</h3>
+                    <p>Если насекомые вернутся — проведем повторную обработку бесплатно по договору.</p>
+                </div>
 
-            <div class="advantage-card">
-                <div class="advantage-icon">🌿</div>
-                <h3>Безопасные средства</h3>
-                <p>Используем сертифицированные препараты IV класса безопасности для людей и животных.</p>
-            </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">🌿</div>
+                    <h3>Безопасные средства</h3>
+                    <p>Используем сертифицированные препараты IV класса безопасности для людей и животных.</p>
+                </div>
 
-            <div class="advantage-card">
-                <div class="advantage-icon">⚡</div>
-                <h3>Срочный выезд</h3>
-                <p>Приедем в течение 2 часов после вашей заявки. Работаем без выходных.</p>
-            </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">⚡</div>
+                    <h3>Срочный выезд</h3>
+                    <p>Приедем в течение 2 часов после вашей заявки. Работаем без выходных.</p>
+                </div>
 
-            <div class="advantage-card">
-                <div class="advantage-icon">👨‍🔬</div>
-                <h3>Опытные мастера</h3>
-                <p>Наши специалисты имеют профильное образование и опыт работы от 5 лет.</p>
-            </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">👨‍🔬</div>
+                    <h3>Опытные мастера</h3>
+                    <p>Наши специалисты имеют профильное образование и опыт работы от 5 лет.</p>
+                </div>
 
+            </div>
         </div>
     </section>
 
-        <!-- НОВЫЙ БЛОК: КАК МЫ РАБОТАЕМ -->
+    <!-- НОВЫЙ БЛОК: КАК МЫ РАБОТАЕМ -->
     <section class="how-we-work-section">
         <div class="container">
             <h2>Как мы работаем</h2>

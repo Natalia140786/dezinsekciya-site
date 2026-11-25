@@ -207,7 +207,7 @@ footer p {
 
 /* --- Блок "Почему выбирают нас" --- */
 .why-us-section {
-    padding: 60px 0;
+    padding: 30px 0;
     background-color: #f8f9fa; /* Светло-серый фон */
     border-radius: 12px; /* Скругление, если блок будет на всю ширину */
     margin-bottom: 40px;
@@ -264,7 +264,7 @@ footer p {
 
 /* --- Блок "Как мы работаем" --- */
 .how-we-work-section {
-    padding: 60px 0;
+    padding: 30px 0;
     background-color: #ffffff; /* Белый фон, чтобы чередовался с серым блоком выше */
 }
 
@@ -316,4 +316,20 @@ footer p {
     font-size: 15px;
     color: #555555;
     line-height: 1.5;
+}
+
+/* --- ФИКС ОТСТУПА ПОД КАРУСЕЛЬЮ --- */
+.swiper-container {
+    margin-bottom: 20px !important; /* Оставляем аккуратный отступ 20px */
+}
+
+/* Находим секцию, которая идет сразу после карусели, и убираем у нее верхний отступ */
+.swiper-container + section {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+/* Убираем отступ у заголовка внутри этой секции */
+.swiper-container + section h1 {
+    margin-top: 0 !important;
 }
